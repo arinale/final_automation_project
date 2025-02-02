@@ -17,7 +17,7 @@ public class SubscriptionTest {
 
     @BeforeClass
     public void setUp() {
-        WebDriver driver = new ChromeDriver();
+        driver = new ChromeDriver();
 
         driver.manage().window().maximize();
         homePage = new HomePage(driver);

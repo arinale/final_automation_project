@@ -2,15 +2,10 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.Reporter;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 import java.time.Duration;
 
@@ -35,5 +30,12 @@ class BasePage {
         WebElement element = findElement(locator);
         element.clear();
         element.sendKeys(text);
+    }
+
+    // ✅ הוספת פונקציה לבחירת ערך בתיבת בחירה (Dropdown)
+    protected void selectDropdownByValue(By locator, String value) {
+        WebElement dropdownElement = findElement(locator);
+        Select dropdown = new Select(dropdownElement);
+        dropdown.selectByValue(value);
     }
 }

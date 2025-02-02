@@ -7,9 +7,13 @@
 
     <test name="RegressionTests">
         <classes>
-            <class name="tests.SignupTest"/>
+            <class name="tests.RegisterUserTest"/>
             <class name="tests.LoginTest"/>
             <class name="tests.SubscriptionTest"/>
+            <class name="tests.CategoryTest"/>
+            <class name="tests.ScrollTest"/>
+            <class name="tests.SignupTest"/>
+
         </classes>
     </test>
 </suite>
