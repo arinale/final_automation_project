@@ -29,17 +29,17 @@ public class SignupTest {
     public void testSignupWithExistingEmail() {
         homePage.openHomePage();
         Assert.assertTrue(homePage.verifyHomePage(), "Home page not visible");
-        Reporter.log("Home page is visible", true);
+        Reporter.log("✅ Home page is visible", true);
 
         homePage.clickSignupLogin();
         Assert.assertTrue(signupPage.verifyNewUserSignupText(), "New User Signup! text not visible");
-        Reporter.log("'New User Signup!' text is visible", true);
+        Reporter.log("✅'New User Signup!' text is visible", true);
 
         signupPage.enterSignupDetails("Test User", "alnb2002@gmail.com");
         signupPage.clickSignupButton();
 
         Assert.assertTrue(signupPage.verifyEmailExistsError(), "Email Address already exist! error not displayed");
-        Reporter.log("Email already exists error message displayed", true);
+        Reporter.log("✅ Email already exists error message displayed", true);
     }
 
     @AfterClass

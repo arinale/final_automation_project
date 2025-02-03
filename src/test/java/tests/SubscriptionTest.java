@@ -28,15 +28,15 @@ public class SubscriptionTest {
     public void testSubscriptionWithValidEmail() {
         homePage.openHomePage();
         Assert.assertTrue(homePage.verifyHomePage(), "Home page not visible");
-        Reporter.log("Home page is visible", true);
+        Reporter.log("✅ Home page is visible", true);
 
         subscriptionPage.scrollToSubscriptionSection();
         Assert.assertTrue(subscriptionPage.verifySubscriptionSection(), "Subscription section not found");
-        Reporter.log("Subscription section is visible", true);
+        Reporter.log("✅ Subscription section is visible", true);
 
         subscriptionPage.enterEmailAndSubscribe("testuser@example.com");
         Assert.assertTrue(subscriptionPage.verifySuccessMessage(), "Subscription success message not displayed");
-        Reporter.log("Subscription success message displayed", true);
+        Reporter.log("✅ Subscription success message displayed", true);
     }
 
     @AfterClass
