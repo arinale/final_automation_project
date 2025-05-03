@@ -9,12 +9,12 @@ pipeline {
         PATH = "${env.PATH};C:\\Users\\arina\\Tools\\Allure\\bin"
     }
 
- stage('Clone Repository') {
-    steps {
-        git branch: 'main', url: 'https://github.com/arinale/final_automation_project.git'
-    }
-}
-
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main', url: 'https://github.com/arinale/final_automation_project.git'
+            }
+        }
 
         stage('Build and Test') {
             steps {
@@ -39,10 +39,11 @@ pipeline {
             ])
         }
         success {
-            echo ' Build succeeded!'
+            echo 'Build succeeded!'
         }
         failure {
-            echo ' Build failed. Please check the logs.'
+            echo 'Build failed. Please check the logs.'
         }
     }
 }
+
