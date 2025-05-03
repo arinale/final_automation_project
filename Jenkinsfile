@@ -9,12 +9,12 @@ pipeline {
         PATH = "${env.PATH};C:\\Users\\arina\\Tools\\Allure\\bin"
     }
 
-    stages {
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/arinale/final_automation_project.git'
-            }
-        }
+ stage('Clone Repository') {
+    steps {
+        git branch: 'main', url: 'https://github.com/arinale/final_automation_project.git'
+    }
+}
+
 
         stage('Build and Test') {
             steps {
